@@ -1,7 +1,7 @@
 #include <Servo.h>
 
 #define LDR_PIN A0       // Photoresistor connected to A0
-#define TEMP_PIN A2      // Temperature sensor connected to A1 (LM35) or use digital pin for DHT11
+#define TEMP_PIN A2      // Temperature sensor connected to A2
 #define SERVO_PIN 13      // Servo motor control pin
 
 Servo curtainServo;
@@ -15,7 +15,7 @@ void setup() {
 
 void loop() {
     int lightLevel = analogRead(LDR_PIN);
-    int temp = 0.4831*analogRead(TEMP_PIN) - 49.28; // Convert LM35 output to Celsius
+    int temp = 0.4831*analogRead(TEMP_PIN) - 49.28; // Convert temperature output to Celsius
 
     Serial.print("Light Level: "); Serial.println(lightLevel);
     Serial.print("Temperature: "); Serial.println(temp);
